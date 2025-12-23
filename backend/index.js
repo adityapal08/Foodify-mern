@@ -19,7 +19,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://foodify-1w2c.onrender.com",
+    origin: "https://foodify-fd.onrender.com",
     credentials: true,
     methods: ["POST", "GET"],
   },
@@ -30,7 +30,7 @@ app.set("io", io);
 const port = process.env.PORT || 5000;
 app.use(
   cors({
-    origin: "https://foodify-1w2c.onrender.com",
+    origin: "https://foodify-fd.onrender.com",
     credentials: true,
     methods: ["POST", "GET"],
   })
