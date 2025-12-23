@@ -17,9 +17,11 @@ import { socketHandler } from "./socket.js";
 const app = express();
 const server = http.createServer(app);
 
+const FRONTEND_URL = "https://foodify-fd.onrender.com";
+
 const io = new Server(server, {
   cors: {
-    origin: "https://foodify-fd.onrender.com",
+    origin: FRONTEND_URL,
     credentials: true,
     methods: ["POST", "GET"],
   },
@@ -30,7 +32,7 @@ app.set("io", io);
 const port = process.env.PORT || 5000;
 app.use(
   cors({
-    origin: "https://foodify-fd.onrender.com",
+    origin: FRONTEND_URL,
     credentials: true,
     methods: ["POST", "GET"],
   })
